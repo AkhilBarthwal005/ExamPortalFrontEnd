@@ -5,11 +5,28 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  // making object for two way binding view to source and source to view.
+  user = {
+    userName : "",
+    firstName : "",
+    lastName : "",
+    email:"",
+    password:"",
+    phone:""
+  }
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
+
+  registrationFormSubmit(){
+    console.log(this.user);
+  }
+  
 
 }

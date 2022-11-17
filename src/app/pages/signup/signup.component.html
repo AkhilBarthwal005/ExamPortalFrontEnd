@@ -23,13 +23,17 @@
         </div>
         <div class="row">
           <div class="col-md-6 offset-md-3">
-            <form action="" method="post">
+            <form (ngSubmit)="registrationFormSubmit()" action="" method="post">
               <!-- UserName -->
+              {{ user | json }}
               <p>
                 <mat-form-field appearance="fill" class="max-width">
                   <mat-label>UserName</mat-label>
+                  <!-- [(ngModal)] help us to make two way binding -->
                   <input
                     type="text"
+                    [(ngModel)]="user.userName"
+                    name="userName"
                     matInput
                     placeholder="UserName should be unique"
                     required
@@ -42,6 +46,8 @@
                   <mat-label>FirstName</mat-label>
                   <input
                     type="text"
+                    [(ngModel)]="user.firstName"
+                    name="firstName"
                     matInput
                     placeholder="Enter FirstName"
                     required
@@ -54,6 +60,8 @@
                   <mat-label>LastName</mat-label>
                   <input
                     type="text"
+                    [(ngModel)]="user.lastName"
+                    name="lastName"
                     matInput
                     placeholder="Enter LastName"
                     required
@@ -66,6 +74,8 @@
                   <mat-label>Email Id</mat-label>
                   <input
                     type="email"
+                    [(ngModel)]="user.email"
+                    name="email"
                     matInput
                     placeholder="Enter email id"
                     required
@@ -78,6 +88,8 @@
                   <mat-label>Phone Number</mat-label>
                   <input
                     type="text"
+                    [(ngModel)]="user.phone"
+                    name="phone"
                     matInput
                     placeholder="Enter 10 digit Mobile Number"
                     pattern="[789]{1}[0-9]{10}"
@@ -91,6 +103,8 @@
                   <mat-label>Password</mat-label>
                   <input
                     type="password"
+                    [(ngModel)]="user.password"
+                    name="password"
                     matInput
                     placeholder="Password must be strong"
                     required

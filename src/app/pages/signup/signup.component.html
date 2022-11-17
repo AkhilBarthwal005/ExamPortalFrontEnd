@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup - ExamPortal</title>
+  </head>
+  <body>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="text-center">
+          <div class="text-center">
+            <img
+              src="../../../assets/ExamPortalLogo.png"
+              alt="ExamPortalImage"
+              width="130rem"
+              height="130rem"
+            />
+          </div>
+          <h1>REGISTRATION FORM</h1>
+          <p>Please fill in the form below</p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <form action="" method="post">
+              <!-- UserName -->
+              <p>
+                <mat-form-field appearance="fill" class="max-width">
+                  <mat-label>UserName</mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="UserName should be unique"
+                    required
+                  />
+                </mat-form-field>
+              </p>
+              <!-- FirstName -->
+              <p>
+                <mat-form-field appearance="fill" class="max-width">
+                  <mat-label>FirstName</mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="Enter FirstName"
+                    required
+                  />
+                </mat-form-field>
+              </p>
+              <!-- LastName -->
+              <p>
+                <mat-form-field appearance="fill" class="max-width">
+                  <mat-label>LastName</mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="Enter LastName"
+                    required
+                  />
+                </mat-form-field>
+              </p>
+              <!-- Email -->
+              <p>
+                <mat-form-field appearance="fill" class="max-width">
+                  <mat-label>Email Id</mat-label>
+                  <input
+                    type="email"
+                    matInput
+                    placeholder="Enter email id"
+                    required
+                  />
+                </mat-form-field>
+              </p>
+              <!-- Phone Number -->
+              <p>
+                <mat-form-field appearance="fill" class="max-width">
+                  <mat-label>Phone Number</mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="Enter 10 digit Mobile Number"
+                    pattern="[789]{1}[0-9]{10}"
+                    required
+                  />
+                </mat-form-field>
+              </p>
+              <!-- Password -->
+              <p>
+                <mat-form-field appearance="fill" class="max-width">
+                  <mat-label>Password</mat-label>
+                  <input
+                    type="password"
+                    matInput
+                    placeholder="Password must be strong"
+                    required
+                  />
+                </mat-form-field>
+              </p>
+              <div class="text-center">
+                <button type="submit" mat-raised-button color="primary">
+                  Submit
+                </button>
+                <button type="reset" class="ml" mat-raised-button color="warn">
+                  Reset
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

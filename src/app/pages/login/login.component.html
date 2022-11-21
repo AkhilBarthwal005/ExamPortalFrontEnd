@@ -1,1 +1,67 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup - ExamPortal</title>
+  </head>
+  <body>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <mat-card class="my-20">
+              <div class="text-center">
+                <div class="text-center">
+                  <img
+                    src="../../../assets/ExamPortalLogo.png"
+                    alt="ExamPortalImage"
+                    width="130rem"
+                    height="130rem"
+                  />
+                </div>
+                <h1>Login Here...</h1>
+              </div>
+              <form action="" method="post">
+                <!-- UserName -->
+                <!-- {{ user | json }} -->
+                <p>
+                  <mat-form-field appearance="fill" class="max-width">
+                    <mat-label>UserName</mat-label>
+                    <!-- [(ngModal)] help us to make two way binding -->
+                    <input
+                      type="text"
+                      name="userName"
+                      matInput
+                      placeholder="UserName should be unique"
+                      required
+                    />
+                  </mat-form-field>
+                </p>
+                <!-- Password -->
+                <p>
+                  <mat-form-field appearance="fill" class="max-width">
+                    <mat-label>Password</mat-label>
+                    <input
+                      type="password"
+                      name="password"
+                      matInput
+                      placeholder="Password must be strong"
+                      required
+                    />
+                  </mat-form-field>
+                </p>
+                <div class="text-center">
+                  <button type="submit" mat-raised-button color="primary">
+                    Login
+                  </button>
+                </div>
+              </form>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

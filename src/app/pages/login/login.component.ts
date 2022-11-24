@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -9,13 +10,14 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
   loginData = {
-    userName: '',
+    username: '',
     password: '',
   };
 
   constructor(
     private snackBar: MatSnackBar,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -24,17 +26,17 @@ export class LoginComponent implements OnInit {
     if (
       (this.loginData.password.trim() === '' ||
         this.loginData.password === null) &&
-      (this.loginData.userName.trim() === '' ||
-        this.loginData.userName === null)
+      (this.loginData.username.trim() === '' ||
+        this.loginData.username === null)
     ) {
-      this.snackBar.open('userName and Password is required', '', {
+      this.snackBar.open('username and Password is required', '', {
         duration: 2000,
       });
     } else if (
-      this.loginData.userName.trim() === '' ||
-      this.loginData.userName === null
+      this.loginData.username.trim() === '' ||
+      this.loginData.username === null
     ) {
-      this.snackBar.open('userName is required', '', {
+      this.snackBar.open('username is required', '', {
         duration: 2000,
       });
     } else if (
@@ -46,9 +48,31 @@ export class LoginComponent implements OnInit {
       });
     } else {
       this.loginService.generateToken(this.loginData).subscribe(
-        (data) => {
+        (data: any) => {
           console.log('success');
           console.log(data);
+
+          this.loginService.loginUser(data.token);
+
+          this.loginService.getCurrentUser().subscribe(
+            (user) => {
+              this.loginService.setUser(user);
+              console.log(user);
+              // redirect : Admin if user is role is admin
+              if (this.loginService.getUserRole() === 'ADMIN') {
+                this.router.navigate(['admin-dashboard']);
+              } else if (this.loginService.getUserRole() === 'NORMAL') {
+                this.router.navigate(['dashboard']);
+              } else {
+                this.loginService.logout();
+              }
+
+              // redirect : Normal if user is role is normal
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
         },
         (error) => {
           console.log('error');

@@ -29,18 +29,18 @@
                 action=""
                 method="post"
               >
-                <!-- UserName -->
+                <!-- username -->
                 <!-- {{ user | json }} -->
                 <p>
                   <mat-form-field appearance="fill" class="max-width">
-                    <mat-label>UserName</mat-label>
+                    <mat-label>username</mat-label>
                     <!-- [(ngModal)] help us to make two way binding -->
                     <input
                       type="text"
-                      [(ngModel)]="user.userName"
-                      name="userName"
+                      [(ngModel)]="user.username"
+                      name="username"
                       matInput
-                      placeholder="UserName should be unique"
+                      placeholder="username should be unique"
                       required
                     />
                   </mat-form-field>

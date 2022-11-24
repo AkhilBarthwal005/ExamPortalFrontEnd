@@ -24,18 +24,18 @@
                 <h1>Login Here...</h1>
               </div>
               <form action="" method="post" (ngSubmit)="loginFormSubimt()">
-                <!-- UserName -->
+                <!-- username -->
                 <!-- {{ loginData | json }} -->
                 <p>
                   <mat-form-field appearance="fill" class="max-width">
-                    <mat-label>UserName</mat-label>
+                    <mat-label>username</mat-label>
                     <!-- [(ngModal)] help us to make two way binding -->
                     <input
                       type="text"
-                      [(ngModel)]="loginData.userName"
-                      name="userName"
+                      [(ngModel)]="loginData.username"
+                      name="username"
                       matInput
-                      placeholder="UserName should be unique"
+                      placeholder="username should be unique"
                     />
                   </mat-form-field>
                 </p>

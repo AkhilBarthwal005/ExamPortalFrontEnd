@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 export class SignupComponent implements OnInit {
   // making object for two way binding view to source and source to view.
   user = {
-    userName: '',
+    username: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -21,7 +22,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -39,6 +41,7 @@ export class SignupComponent implements OnInit {
           'Your Registration has been done!',
           'success'
         );
+        this.router.navigate(['login']);
       },
       (error) => {
         // error

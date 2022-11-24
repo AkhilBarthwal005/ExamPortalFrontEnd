@@ -15,7 +15,7 @@ export class LoginService {
 
   // save token to localStorage
 
-  public loginUser(token: string) {
+  public loginUser(token: any) {
     localStorage.setItem('token', token);
     return true;
   }
@@ -24,7 +24,7 @@ export class LoginService {
 
   public isLoggedIn() {
     let token = localStorage.getItem('token');
-    if (token !== null || token !== '' || token !== undefined) {
+    if (token !== null && token !== '' && token !== undefined) {
       return true;
     }
     return false;
@@ -63,6 +63,13 @@ export class LoginService {
 
   public getUserRole() {
     let user = this.getUser();
-    return user.authorities[0].authority;
+    if (user != null) return user.authorities[0].authority;
+    return null;
+  }
+
+  // get current user
+
+  public getCurrentUser() {
+    return this.http.get(`${baseUrl}/current-user`);
   }
 }

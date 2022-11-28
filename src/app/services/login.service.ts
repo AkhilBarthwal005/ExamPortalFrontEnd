@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import baseUrl from './helper';
 
 @Injectable({
@@ -7,6 +8,8 @@ import baseUrl from './helper';
 })
 export class LoginService {
   constructor(private http: HttpClient) {}
+
+  public loginStatus = new Subject<boolean>(); // making subject so that we can send subject when ever user logged in or logged out and get notified . check this on login.component.ts
 
   // genrating token
   public generateToken(loginData: any) {
@@ -35,6 +38,7 @@ export class LoginService {
   public logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    this.loginStatus.next(true);
     return true;
   }
 

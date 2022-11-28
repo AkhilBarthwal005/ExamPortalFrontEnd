@@ -9,7 +9,7 @@
   <span>Exam Portal</span>
   <span class="example-spacer"></span>
   <button
-    *ngIf="!loginService.isLoggedIn()"
+    *ngIf="!isLoggedIn"
     mat-icon-button
     class="example-icon favorite-icon"
     aria-label="Example icon-button with heart icon"
@@ -18,7 +18,7 @@
     Login
   </button>
   <button
-    *ngIf="!loginService.isLoggedIn()"
+    *ngIf="!isLoggedIn"
     mat-icon-button
     class="example-icon ml mr"
     aria-label="Example icon-button with share icon"
@@ -27,16 +27,16 @@
     signUp
   </button>
   <button
-    *ngIf="loginService.isLoggedIn()"
+    *ngIf="isLoggedIn && username"
     mat-icon-button
     class="example-icon favorite-icon mr"
     aria-label="Example icon-button with heart icon"
     [routerLink]="'/login'"
   >
-    {{ loginService.getUser().username }}
+    {{ username }}
   </button>
   <button
-    *ngIf="loginService.isLoggedIn()"
+    *ngIf="isLoggedIn"
     (click)="logout()"
     mat-icon-button
     class="example-icon ml mr"

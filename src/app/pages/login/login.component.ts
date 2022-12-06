@@ -79,6 +79,13 @@ export class LoginComponent implements OnInit {
         (error) => {
           console.log('error');
           console.log(error);
+          this.snackBar.open(
+            'Username Name Not found or Username and Password mismatch',
+            '',
+            {
+              duration: 2000,
+            }
+          );
         }
       );
     }

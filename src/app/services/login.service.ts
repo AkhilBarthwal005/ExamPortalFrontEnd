@@ -13,6 +13,7 @@ export class LoginService {
 
   // genrating token
   public generateToken(loginData: any) {
+    localStorage.clear();
     return this.http.post(`${baseUrl}/generate-token`, loginData);
   }
 

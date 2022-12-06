@@ -24,6 +24,7 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { MatListModule } from '@angular/material/list';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SideBarComponent } from './pages/admin-dashboard/side-bar/side-bar.component';
+import { WelcomeComponent } from './pages/admin-dashboard/welcome/welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { SideBarComponent } from './pages/admin-dashboard/side-bar/side-bar.comp
     AdminDashboardComponent,
     SideBarComponent,
     ProfileComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

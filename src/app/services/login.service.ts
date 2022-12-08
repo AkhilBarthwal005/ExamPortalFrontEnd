@@ -77,4 +77,13 @@ export class LoginService {
   public getCurrentUser() {
     return this.http.get(`${baseUrl}/current-user`);
   }
+  // get current user Details
+  public getCurrentUserDetails() {
+    let obj = localStorage.getItem('user');
+    let user;
+    if (obj != null) {
+      user = JSON.parse(obj);
+    }
+    return this.http.get(`${baseUrl}/user/${user.username}`);
+  }
 }

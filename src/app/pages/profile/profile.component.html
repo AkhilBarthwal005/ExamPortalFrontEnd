@@ -1,1 +1,51 @@
-<p>profile works!</p>
+<div class="bootstrap-wrapper">
+  <div class="container my-20">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <mat-card>
+          <!-- Profile section -->
+          <div class="text-center">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsqlLXvQzap9hX2xdgmBKa-kxmoKP4G2ppPg&usqp=CAU"
+              alt=""
+              class="admin__profile"
+            />
+            <h1>Akhil Barthwal</h1>
+          </div>
+          <!-- Table  -->
+          <div class="my-20">
+            <table *ngIf="user">
+              <!-- {{
+                user | json
+              }} -->
+              <tr>
+                <th>UserId</th>
+                <td>EXAM{{ user.userId }}</td>
+              </tr>
+              <tr>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
+              </tr>
+              <tr>
+                <th>Email Id</th>
+                <td>{{ user.email }}</td>
+              </tr>
+              <tr>
+                <th>Phone No.</th>
+                <td>{{ user.phone }}</td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>{{ user.enabled ? "ACTIVE" : "NOT ACTIVE" }}</td>
+              </tr>
+            </table>
+          </div>
+          <mat-card-actions class="text-center my-20">
+            <button mat-raised-button color="primary">LIKE</button>
+            <button mat-raised-button color="accent">SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

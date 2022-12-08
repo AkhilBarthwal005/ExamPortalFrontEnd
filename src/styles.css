@@ -26,3 +26,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 .my-20{
     margin: 20px 0 !important;
 }
+.card-shadow{
+    box-shadow: 2px 2px 5px #ccc;
+}
